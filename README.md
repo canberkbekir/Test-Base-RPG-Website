@@ -13,4 +13,6 @@
 -You can upgrade stats
 
 # Screenshoots from game
-![](img/main.png)
+![](img/mainSS.png)
+![](img/tavernSS.png)
+![](img/goblinSS.png)

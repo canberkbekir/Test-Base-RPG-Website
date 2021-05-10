@@ -1,6 +1,11 @@
 # Lost City
 ## _Lost City is TBRPG game_
 
+# What you have to do
+
+- For gold you need to raid dungeons
+- You can raid dungeon once a day
+- You can heal from tavern
 
 
 

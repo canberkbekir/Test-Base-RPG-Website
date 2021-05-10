@@ -6,12 +6,18 @@ var amuletCheck = false;
 var day = 1 ;
 var dungeonCheck = false;
 
-/*
-GOBLIN CAVE DAMAGE 8 GOLD 5
-DANCING TUNNEL DAMAGE 18 GOLD 12
-GIANT DAMAGE 35 GOLD 42
-*/
 
+var tavernTalks = [
+"Goblins get the dwarf mine cave. We need to clean the cave.",
+"They say in the dancing tunnel you can hear angel voices.",
+"In the temple you can find treasures",
+"In tavern you can stay baddes room for free but you will not be served food.",
+"How is your day goin?",
+"Some dwarf always trying to flirt with me."
+,"You can buy amulet from Church you know that?",
+"Do you want more?",
+"HEY!You guys dont fight!",
+"Thats beer made by dwarfs.It is very quality shit."];
 
 const currenthealthDOC = document.getElementById('currentHealth');
 const gold = document.getElementById('gold');
@@ -42,6 +48,7 @@ const beer_btn = document.getElementById('beer-button');
 const tavern_closeBtn = document.getElementById('tavern-close-btn');
 const tavern_modal = document.getElementById('tavern-modal');
 const tavern_text = document.getElementById('tavern');
+const tavern_talk = document.getElementById('tavern-text')
 
 
 //TEMPLE OF ANCIENT GIANT
@@ -247,7 +254,7 @@ beer_btn.addEventListener('click',()=> {
     if(currentgold >= 3)
     {
         currentgold -= 3;
-        console.log('gossip');
+        tavernTalk();
 
     }
 });
@@ -369,5 +376,45 @@ function Die()
     recovery_stat = 5;
     day = 1;
     alert("YOU DIED TRY AGAIN");
+}
+
+function tavernTalk()
+{
+    switch ( Math.floor(Math.random() * 11)) {
+        case 1:
+            tavern_talk.innerHTML = tavernTalks[0].toString();
+            break;
+        case 2:
+            tavern_talk.innerHTML = tavernTalks[1].toString();
+            break;
+        case 3:
+            tavern_talk.innerHTML = tavernTalks[2].toString();
+            break;
+        case 4:
+            tavern_talk.innerHTML = tavernTalks[3].toString();
+            break;
+        case 5:
+            tavern_talk.innerHTML = tavernTalks[4].toString();
+            break;
+        case 6:
+            tavern_talk.innerHTML = tavernTalks[5].toString();
+            break;
+        case 7:
+            tavern_talk.innerHTML = tavernTalks[6].toString();
+            break;
+        case 8:
+            tavern_talk.innerHTML = tavernTalks[7].toString();
+            break;
+        case 9:
+            tavern_talk.innerHTML = tavernTalks[8].toString();
+            break;
+        case 10:
+            tavern_talk.innerHTML = tavernTalks[9].toString();
+            break;
+         
+        default:
+            console.log("olmadı");
+            break;
+    }
 }
 

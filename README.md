@@ -13,4 +13,4 @@
 -You can upgrade stats
 
 # Screenshoots from game
-![](img\main.png)
+![](img/main.png)

@@ -162,7 +162,7 @@
 
 
       #dancing-dungeon-modal {
-        display: flex;
+        display: none;
       }
 
       #dancing-modal-content {

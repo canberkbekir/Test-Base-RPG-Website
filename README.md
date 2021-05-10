@@ -8,9 +8,9 @@
 ## Game mechanics are
 
 
--Aleatoric combat system
--Tavern talk system inspired from Baldur's Gate
--You can upgrade stats
+- Aleatoric combat system
+- Tavern talk system inspired from Baldur's Gate
+- You can upgrade stats
 
 # Screenshoots from game
 ![](img/mainSS.png)

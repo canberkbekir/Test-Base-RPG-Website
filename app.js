@@ -18,7 +18,7 @@ const gold = document.getElementById('gold');
 
 //CURCH
 
-const buff_btn = document.getElementById('buff-button');
+
 const amulet_btn = document.getElementById('amulet-button');
 const curch_modal = document.getElementById('curch-modal');
 const curch_closeBtn = document.getElementById('curch-close-btn');
@@ -50,6 +50,7 @@ const giant_text = document.getElementById('thirdDungeon');
 const giant_modal = document.getElementById('giant-dungeon-modal');
 const giant_close_btn = document.getElementById('giant-close-btn');
 const giant_dungeon_btn = document.getElementById('giant-dungeon-btn');
+const giant_output = document.getElementById('giant-text');
 
 //DANCING-TUNNEL-DUNGEON 
 
@@ -57,6 +58,7 @@ const dancing_text = document.getElementById('secondDungeon');
 const dancing_modal = document.getElementById('dancing-dungeon-modal');
 const dancing_close_btn = document.getElementById('dancing-close-btn');
 const dancing_dungeon_btn = document.getElementById('dancing-dungeon-btn');
+const dancing_output = document.getElementById('dancing-text');
 
 //GOBLIN-DUNGEON
 
@@ -64,6 +66,7 @@ const goblin_text = document.getElementById('firstDungeon');
 const goblin_modal = document.getElementById('goblin-dungeon-modal');
 const goblin_close_btn = document.getElementById('goblin-close-btn');
 const goblin_dungeon_btn = document.getElementById('goblin-dungeon-btn');
+const goblin_output = document.getElementById('goblin-text');
 
 
 //STATS
@@ -107,14 +110,6 @@ curch_closeBtn.addEventListener('click',()=> {
     curch_modal.style.display = 'none';
 })
 
-buff_btn.addEventListener('click',()=> {
-    if(currentgold >= 15)
-    {
-        currentgold -= 15;
-        //Random BUFF SCRIPT
-
-    }
-});
 
 amulet_btn.addEventListener('click',()=> {
     if(currentgold >= 150 && amuletCheck == false)
@@ -136,7 +131,7 @@ giant_close_btn.addEventListener('click',()=>{
 giant_dungeon_btn.addEventListener('click',()=>{
     if(dungeonCheck == false)
     {
-        raidDungeon(amuletCheck,8,damage_stat,5,8);
+        raidDungeon(amuletCheck,35,damage_stat,42,35,giant_output);
         dungeonCheck = true;
     }
     else
@@ -157,7 +152,7 @@ dancing_close_btn.addEventListener('click',()=>{
 dancing_dungeon_btn.addEventListener('click',()=>{
     if(dungeonCheck == false)
     {
-        raidDungeon(amuletCheck,8,damage_stat,5,8);
+        raidDungeon(amuletCheck,18,damage_stat,12,18,dancing_output);
         dungeonCheck = true;
     }
     else
@@ -170,7 +165,7 @@ dancing_dungeon_btn.addEventListener('click',()=>{
 goblin_dungeon_btn.addEventListener('click',()=>{
     if(dungeonCheck == false)
     {
-        raidDungeon(amuletCheck,8,damage_stat,5,8);
+        raidDungeon(amuletCheck,8,damage_stat,5,8,goblin_output);
         dungeonCheck = true;
     }
     else
@@ -197,7 +192,7 @@ peasant_btn.addEventListener('click',()=> {
     {
         currentgold -= 3;
         day += 1;
-        var dungeonCheck = false;
+        dungeonCheck = false;
         if(currenthealth + 10 > maxhealth)
         {
             currenthealth = maxhealth;
@@ -305,7 +300,7 @@ recovery_upgrade.addEventListener('click', ()=>
     }
 })
 
-function raidDungeon(amulet,powerLvl,characterPowerLvl,gold,absoluteDamage)
+function raidDungeon(amulet,powerLvl,characterPowerLvl,gold,absoluteDamage,dungeonText)
 {
     let exHealth = currenthealth;
     let exGold = currentgold;
@@ -358,6 +353,8 @@ function raidDungeon(amulet,powerLvl,characterPowerLvl,gold,absoluteDamage)
 
         }
     }
+
+    dungeonText.innerHTML = "You lost " + (exHealth - currenthealth) + " HP.And You get " + (currentgold - exGold) + " gold.";
     console.log("You lost " + (exHealth - currenthealth) + " HP" );
     console.log("You get " + (currentgold - exGold) + " gold.")
 }

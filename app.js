@@ -3,6 +3,14 @@ var currenthealth = 50;
 var currentgold =20;
 var amuletCheck = false;
 
+var day = 1 ;
+var dungeonCheck = false;
+
+/*
+GOBLIN CAVE DAMAGE 8 GOLD 5
+DANCING TUNNEL DAMAGE 18 GOLD 12
+GIANT DAMAGE 35 GOLD 42
+*/
 
 
 const currenthealthDOC = document.getElementById('currentHealth');
@@ -63,6 +71,7 @@ const goblin_dungeon_btn = document.getElementById('goblin-dungeon-btn');
 const  damage_statDOC = document.getElementById('damage_stat');
 const  health_statDOC = document.getElementById('health_stat');
 const  recovery_statDOC = document.getElementById('recovery_stat');
+const day_statDOC = document.getElementById('day');
 
 var damage_stat = 5;
 var health_stat = 5;
@@ -79,12 +88,16 @@ setInterval(()=> {
     damage_statDOC.innerHTML = damage_stat;
     health_statDOC.innerHTML = health_stat;
     recovery_statDOC.innerHTML = recovery_stat;
+    day_statDOC.innerHTML = day;
+
+    if(currenthealth <=0)
+    {
+        Die();
+    }
 
 
     
 },100);
-
-
 //CURCH INPUTS
 curch_text.addEventListener('click', ()=>{
     curch_modal.style.display = 'flex';
@@ -121,7 +134,15 @@ giant_close_btn.addEventListener('click',()=>{
 })
 
 giant_dungeon_btn.addEventListener('click',()=>{
-    //RAID SCRIPT NEEDED
+    if(dungeonCheck == false)
+    {
+        raidDungeon(amuletCheck,8,damage_stat,5,8);
+        dungeonCheck = true;
+    }
+    else
+    {
+        alert("You can do it once a day. ")
+    }        
  })
 
 //DANCING TUNNEL DUNGEON INPUTS
@@ -134,12 +155,28 @@ dancing_close_btn.addEventListener('click',()=>{
 })
 
 dancing_dungeon_btn.addEventListener('click',()=>{
-    //RAID SCRIPT NEEDED
+    if(dungeonCheck == false)
+    {
+        raidDungeon(amuletCheck,8,damage_stat,5,8);
+        dungeonCheck = true;
+    }
+    else
+    {
+        alert("You can do it once a day. ")
+    }    
  })
 
 //GOBLIN CAVE
 goblin_dungeon_btn.addEventListener('click',()=>{
-   //RAID SCRIPT NEEDED
+    if(dungeonCheck == false)
+    {
+        raidDungeon(amuletCheck,8,damage_stat,5,8);
+        dungeonCheck = true;
+    }
+    else
+    {
+        alert("You can do it once a day. ")
+    }    
 })
 
 goblin_close_btn.addEventListener('click',()=>{
@@ -159,6 +196,8 @@ peasant_btn.addEventListener('click',()=> {
     if(currentgold >= 3)
     {
         currentgold -= 3;
+        day += 1;
+        var dungeonCheck = false;
         if(currenthealth + 10 > maxhealth)
         {
             currenthealth = maxhealth;
@@ -169,11 +208,18 @@ peasant_btn.addEventListener('click',()=> {
         }
 
     }
+    else
+    {
+        day += 1;
+        dungeonCheck = false;
+    }
 });
 noble_btn.addEventListener('click',()=> {
     if(currentgold >= 9)
     {
         currentgold -= 9;
+        day += 1;
+        dungeonCheck = false;
         if(currenthealth + 35 > maxhealth)
         {
             currenthealth = maxhealth;
@@ -189,6 +235,8 @@ royal_btn.addEventListener('click',()=> {
     if(currentgold >= 15)
     {
         currentgold -= 15;
+        day += 1;
+        dungeonCheck = false;
         if(currenthealth + 60 > maxhealth)
         {
             currenthealth = maxhealth;
@@ -256,3 +304,73 @@ recovery_upgrade.addEventListener('click', ()=>
 
     }
 })
+
+function raidDungeon(amulet,powerLvl,characterPowerLvl,gold,absoluteDamage)
+{
+    let exHealth = currenthealth;
+    let exGold = currentgold;
+    let hit = Math.floor(Math.random() * 11);
+    
+    if(amulet == true)
+    {
+        
+        if(powerLvl > characterPowerLvl)
+        {
+           currenthealth -= hit * 1.5 + absoluteDamage;
+           currentgold += Math.floor(Math.random() * 11) + gold;
+           
+        }
+        else
+        { 
+            currenthealth -=hit + absoluteDamage;
+            currentgold += Math.floor(Math.random() * 11) + gold;
+
+        }
+    }
+    else
+    {
+        if(powerLvl > characterPowerLvl)
+        {
+           if(Math.floor(Math.random() * 11)>5)
+           {
+            currenthealth -= hit * 2 + absoluteDamage;
+            currentgold += Math.floor(Math.random() * 11) + gold;
+           }
+           else
+           {
+            currenthealth -= hit * 1.5 + absoluteDamage;
+            currentgold += Math.floor(Math.random() * 11) + gold;
+           } 
+           
+        }
+        else
+        {
+            if(Math.floor(Math.random() * 11)>5)
+           {
+            currenthealth -= hit * 1.5 + absoluteDamage;
+            currentgold += Math.floor(Math.random() * 11) + gold;
+           }
+           else
+           {
+            currenthealth -= hit + absoluteDamage;
+            currentgold += Math.floor(Math.random() * 11) + gold;
+           } 
+
+        }
+    }
+    console.log("You lost " + (exHealth - currenthealth) + " HP" );
+    console.log("You get " + (currentgold - exGold) + " gold.")
+}
+function Die() 
+{
+    currenthealth = 50
+    maxhealth = 50;
+    currentgold = 50
+    amuletCheck = false
+    damage_stat = 5;
+    health_stat = 5;
+    recovery_stat = 5;
+    day = 1;
+    alert("YOU DIED TRY AGAIN");
+}
+

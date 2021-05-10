@@ -2,6 +2,7 @@
 
       p {
         font-family: "Gabriela", serif;
+        
       }
       a {
         font-family: "Gabriela", serif;
@@ -161,7 +162,7 @@
 
 
       #dancing-dungeon-modal {
-        display: none;
+        display: flex;
       }
 
       #dancing-modal-content {
@@ -174,6 +175,15 @@
         position: absolute;
         top: 460;
         left: 42%;
+      }
+      #dancing-text
+      {
+        position: absolute;
+        top: 290;
+        left: 100;
+        width: 300;
+        height: 150;
+        color: black;
       }
 
       #giant-dungeon-modal {
@@ -192,6 +202,15 @@
         left: 42%;
       }
 
+      #giant-text
+      {
+        position: absolute;
+        top: 260;
+        left: 100;
+        width: 308;
+        height: 162;
+        color: black;
+      }
 
 
       #goblin-dungeon-modal {
@@ -208,6 +227,16 @@
         position: absolute;
         top: 460;
         left: 42%;
+      }
+      
+      #goblin-text
+      {
+        position: absolute;
+        top: 270;
+        left: 80;
+        width: 332;
+        height: 177;
+        color: black;
       }
 
       #noble-room-button {
@@ -313,6 +342,14 @@
         top: 464px;
         left: 910;
         color: FEFEFE;
+      }
+
+      #day {
+        top: 44;
+        right: 40;
+        position: absolute;
+        text-align: center;
+        
       }
       html, body { 
       width: 100%;

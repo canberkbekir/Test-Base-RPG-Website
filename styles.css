@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabriela&display=swap");
+
+      p {
+        font-family: "Gabriela", serif;
+      }
+      a {
+        font-family: "Gabriela", serif;
+        color: FEFEFE;
+      }
+
+      .tavern-talk{
+        position: absolute;
+        color: rgb(0, 0, 0);
+        top: 60;
+        left: 270;
+        height: 332;
+        width: 174;
+        
+      }
+
+      .tavern-button {
+        background-color:FFCC66;
+        border: none;
+        width: 80;
+        font-family: "Gabriela", serif;
+      }
+
+      .stat-upgrade {
+        position: absolute;
+        width: 25;
+        height: 25;
+        background-image: url(img/upgrade.png);
+      }
+
+      .bg-modal {
+        width: 800;
+        height: 555;
+        position: absolute;
+        background-color: rgba(61, 56, 56, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+      }
+      .modal-content {
+        width: 400px;
+        height: 250px;
+        opacity: 1;
+        background-color: white;
+        position: absolute;
+      }
+      .close-button {
+        position: absolute;
+        right: 15;
+        font-size: 42;
+        color: rgb(182, 170, 170);
+        opacity: 1;
+        transform: rotate(45deg);
+        cursor: pointer;
+      }
+
+      .scene {
+        background: url(img/main.png);
+        width: 1000px;
+        height: 555px;
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translate(0, -50%);
+      }
+
+      .buildings {
+        background-color: rgba(60, 60, 60, 0.3);
+        position: absolute;
+        color: FEFEFE;
+        padding: 10;
+        width: 80;
+        height: 50;
+        cursor: pointer;
+      }
+
+      .dungeons {
+        background-color: rgba(60, 60, 60, 0.3);
+        position: absolute;
+        color: FEFEFE;
+        cursor: pointer;
+        padding: 5;
+      }
+
+      .close-button:hover {
+        color: firebrick;
+      }
+
+      .stat-upgrade:hover{
+        background-image: url(img/upgradehover.png);
+      }
+
+     
+      .tavern-button:hover {
+        background-color: DEB159;
+      }
+
+      .dungeons:hover {
+        background-color: rgba(256, 256, 256, 0.3);
+      }
+
+      .buildings:hover {
+        background-color: rgba(256, 256, 256, 0.3);
+      }
+
+      
+
+      a:hover {
+        color: FEFEFE;
+      }
+
+      /*MODALS*/
+
+
+      #curch-modal {
+        display: none;
+      }
+
+      #curch-modal-content {
+        background-image: url(img/curch.png);
+        width: 500;
+        height: 500;
+      }
+
+      #buff-button {
+        position: absolute;
+        top: 300;
+        left: 285;
+      }
+      #amulet-button {
+        position: absolute;
+        top: 400;
+        left: 285;
+      }
+
+      #tavern-modal {
+        display: none;
+      }
+
+      #tavern-modal-content{
+        background-image: url(img/bartender.png);
+        width: 500;
+        height: 500;
+      }
+
+      #blacksmith-modal {
+        display: none;
+      }
+
+      #peasant-room-button {
+        position: absolute;
+        top: 360;
+        left: 110;
+      }
+
+
+      #dancing-dungeon-modal {
+        display: none;
+      }
+
+      #dancing-modal-content {
+        background-image: url(img/dancingTunnel.png);
+        width: 500;
+        height: 500;
+      }
+
+      #dancing-dungeon-btn {
+        position: absolute;
+        top: 460;
+        left: 42%;
+      }
+
+      #giant-dungeon-modal {
+        display: none;
+      }
+
+      #giant-modal-content {
+        background-image: url(img/templeGiant.png);
+        width: 500;
+        height: 500;
+      }
+
+      #giant-dungeon-btn {
+        position: absolute;
+        top: 460;
+        left: 42%;
+      }
+
+
+
+      #goblin-dungeon-modal {
+        display: none;
+      }
+
+      #goblin-modal-content {
+        background-image: url(img/goblinCave.png);
+        width: 486;
+        height: 500;
+      }
+
+      #goblin-dungeon-btn {
+        position: absolute;
+        top: 460;
+        left: 42%;
+      }
+
+      #noble-room-button {
+        position: absolute;
+        top: 410;
+        left: 110;
+        
+      }
+      #royal-room-button {
+        position: absolute;
+        top: 460;
+        left: 110;
+        
+      }
+      #beer-button {
+        position: absolute;
+        top: 430;
+        left: 320;
+      }
+
+      #blacksmith-modal-content {
+        background-image: url(img/blacksmith.png);
+        width: 468;
+        height: 411;
+      }
+
+      #damage-upgrade {
+        top: 105;
+        left: 330;
+      }
+
+      #health-upgrade {
+        top: 195;
+        left: 330;
+      }
+
+      #recovery-upgrade {
+        top: 280;
+        left: 330;
+      }
+      /*MAP*/
+      #firstDungeon {
+        top: 5;
+        left: 380;
+        height: 35;
+      }
+
+      #secondDungeon {
+        top: 70;
+        left: 630;
+      }
+
+      #thirdDungeon {
+        top: 350;
+      }
+
+      #blacksmith {
+        width: 100px;
+        top: 250;
+        left: 300;
+      }
+      #church {
+        top: 200;
+        left: 120;
+      }
+      #tavern {
+        top: 55;
+        left: 430;
+      }
+
+      /*STATS*/
+      #health {
+        font-size: 20;
+        position: absolute;
+        top: 25px;
+        left: 860;
+        color: FEFEFE;
+      }
+      #money {
+        position: absolute;
+        top: 60px;
+        left: 860;
+        font-size: 20;
+        color: FEFEFE;
+      }
+      #damage_stat {
+        font-size: 20;
+        position: absolute;
+        top: 364px;
+        left: 910;
+        color: FEFEFE;
+      }
+      #health_stat {
+        font-size: 20;
+        position: absolute;
+        top: 415px;
+        left: 910;
+        color: FEFEFE;
+      }
+      #recovery_stat {
+        font-size: 20;
+        position: absolute;
+        top: 464px;
+        left: 910;
+        color: FEFEFE;
+      }
+      html, body { 
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      }
+      

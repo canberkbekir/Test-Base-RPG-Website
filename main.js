@@ -206,12 +206,13 @@ peasant_btn.addEventListener('click',()=> {
         }
         else
         {
-            currenthealth +=10;
+            currenthealth +=10 + recovery_stat;
         }
 
     }
     else
     {
+        alert('You didnt recovered.')
         day += 1;
         dungeonCheck = false;
     }
@@ -228,7 +229,7 @@ noble_btn.addEventListener('click',()=> {
         }
         else
         {
-            currenthealth +=40;
+            currenthealth +=40 + recovery_stat;
         }
 
     }
@@ -245,7 +246,7 @@ royal_btn.addEventListener('click',()=> {
         }
         else
         {
-            currenthealth +=60;
+            currenthealth +=60 + recovery_stat;
         }
 
     }

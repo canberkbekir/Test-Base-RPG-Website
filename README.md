@@ -6,6 +6,7 @@
 - For gold you need to raid dungeons
 - You can raid dungeon once a day
 - You can heal from tavern
+- You can upgrade your stats from blacksmith
 
 
 
